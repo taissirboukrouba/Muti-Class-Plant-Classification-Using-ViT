@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:pfe_app/Nav.dart';
-import 'package:pfe_app/Screens/HomeScreen.dart';
-import 'package:pfe_app/Screens/PlantIDpage.dart';
-import 'package:pfe_app/Screens/PlantPage.dart';
-import 'package:pfe_app/Screens/TipArticlePage.dart';
-import 'package:pfe_app/Screens/TipsPage.dart';
-import 'package:pfe_app/Screens/onBoardingScreen.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,8 +16,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home:  Nav(),
-      
+      home:Nav()
+      /* AnimatedSplashScreen(
+        nextScreen: Nav(),
+        splash: Image.asset('assets/images/Group 32.png'),
+        splashIconSize: 150,
+        splashTransition: SplashTransition.fadeTransition,
+        backgroundColor: Color(0xffF8F8F8),
+        duration: 3000,
+      ),*/
     );
   }
 }

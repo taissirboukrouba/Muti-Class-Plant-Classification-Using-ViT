@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pfe_app/Nav.dart';
+import 'package:pfe_app/Screens/TipsPage.dart';
 
 import 'HomeScreen.dart';
 
@@ -32,7 +34,7 @@ class TipArticlePage extends StatelessWidget {
                   Navigator.push(
                       context,
                       PageRouteBuilder(
-                          transitionDuration: Duration(milliseconds: 500),
+                          transitionDuration: Duration(milliseconds: 300),
                           transitionsBuilder:
                               (context, animation, animationTime, child) {
                             animation = CurvedAnimation(
@@ -44,7 +46,7 @@ class TipArticlePage extends StatelessWidget {
                             );
                           },
                           pageBuilder: (context, animation, animationTime) {
-                            return HomeScreen();
+                            return Nav();
                           }));
                 },
                 child: Row(

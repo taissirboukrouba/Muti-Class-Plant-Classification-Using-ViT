@@ -18,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
       extendBody: true,
       body:Column(
           children: [
+            SizedBox(height: 20,),
             /*------------------------------ upper part -------------------*/
             Container(
               child: Row(
@@ -42,6 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: SvgPicture.asset(
                               'assets/Svg/Search.svg',
                               width: 30,
+                              fit: BoxFit.fill,
                             )),
                         Container(
                           padding: EdgeInsets.only(right: 75),
@@ -323,47 +325,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-           /* Container(
-              margin: EdgeInsets.all(0),
-              padding: EdgeInsets.all(0),
-              alignment: Alignment.bottomCenter,
-              child: FloatingNavbar(
-                width: 343,
-                borderRadius: 5,
-                iconSize: 30,
-                backgroundColor: Color(0xffFAFAFA),
-                unselectedItemColor: Color(0xff098256),
-                selectedItemColor: Color(0xff098256),
-                items: [
-                  FloatingNavbarItem(
-                    icon: Icons.home,
-                  ),
-                  FloatingNavbarItem(icon: Icons.favorite),
-                  FloatingNavbarItem(icon: Icons.camera_alt),
-                  FloatingNavbarItem(icon: Icons.help),
-                ],
-                currentIndex: 0,
-                onTap: (int val) {
-                  Navigator.push(
-                      context,
-                      PageRouteBuilder(
-                          transitionDuration: Duration(milliseconds: 500),
-                          transitionsBuilder:
-                              (context, animation, animationTime, child) {
-                            animation = CurvedAnimation(
-                                parent: animation, curve: Curves.elasticInOut);
-                            return ScaleTransition(
-                              scale: animation,
-                              child: child,
-                              alignment: Alignment.center,
-                            );
-                          },
-                          pageBuilder: (context, animation, animationTime) {
-                            return HomeScreen();
-                          }));
-                },
-              ),
-            )*/
+        
           ],
         ),
       

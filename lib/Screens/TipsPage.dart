@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pfe_app/Screens/HomeScreen.dart';
 import 'package:pfe_app/Screens/PlantIDpage.dart';
+import 'package:pfe_app/Screens/TipArticlePage.dart';
 
 class TipsPage extends StatefulWidget {
   const TipsPage({Key? key}) : super(key: key);
@@ -60,7 +61,12 @@ class _TipsPageState extends State<TipsPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Container(child: SvgPicture.asset('assets/Svg/tips-icon.svg')),
+                Container(
+                    child: Icon(
+                  Icons.lightbulb,
+                  size: 40,
+                  color: Color(0xff098256),
+                )),
                 Center(
                   child: Text(
                     "This page provides tips and tricks\n on plants care  ",
@@ -105,15 +111,39 @@ class _TipsPageState extends State<TipsPage> {
                             Positioned(
                               right: 10,
                               top: 15,
-                              child: Container(
-                                padding: EdgeInsets.only(right: 10),
-                                child: Text(
-                                  "How to take pictures\n in Nebta ?",
-                                  style: GoogleFonts.sairaExtraCondensed(
-                                      fontSize: 30,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black),
-                                  textAlign: TextAlign.left,
+                              child: TextButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      PageRouteBuilder(
+                                          transitionDuration:
+                                              Duration(milliseconds: 100),
+                                          transitionsBuilder: (context,
+                                              animation, animationTime, child) {
+                                            animation = CurvedAnimation(
+                                                parent: animation,
+                                                curve: Curves.bounceIn);
+                                            return ScaleTransition(
+                                              scale: animation,
+                                              child: child,
+                                              alignment: Alignment.center,
+                                            );
+                                          },
+                                          pageBuilder: (context, animation,
+                                              animationTime) {
+                                            return TipArticlePage();
+                                          }));
+                                },
+                                child: Container(
+                                  padding: EdgeInsets.only(right: 10),
+                                  child: Text(
+                                    "How to take pictures\n in Nebta ?",
+                                    style: GoogleFonts.sairaExtraCondensed(
+                                        fontSize: 30,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                    textAlign: TextAlign.left,
+                                  ),
                                 ),
                               ),
                             )
