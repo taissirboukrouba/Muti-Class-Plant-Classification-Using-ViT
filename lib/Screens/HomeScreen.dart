@@ -2,6 +2,7 @@ import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.da
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -24,8 +25,12 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Row(
                 children: [
                   Container(
+                    height: 120,
+                    width: 100,
+              
+                    
                     padding: EdgeInsets.only(top: 20, left: 20),
-                    child: SvgPicture.asset('assets/Svg/Logo.svg'),
+                    child: Lottie.asset('assets/Svg/animation.json',fit: BoxFit.fill),
                   ),
                   Container(
                     margin: EdgeInsets.only(left: 20),
@@ -83,6 +88,8 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Container(
                   color: Colors.transparent,
                   height: 70,
+
+                  
                   margin: EdgeInsets.only(left: 20),
                   width: MediaQuery.of(context).size.width,
                   child: PageView(
@@ -92,14 +99,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           /*------------- All --------------------*/
-                          TextButton(
-                            onPressed: () {},
-                            child: Text(
-                              'All',
-                              style: GoogleFonts.sairaExtraCondensed(
-                                  fontSize: 23,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black),
+                          Flexible(
+                            child: TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                'All',
+                                style: GoogleFonts.sairaExtraCondensed(
+                                    fontSize: 23,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
                             ),
                           ),
                           SizedBox(

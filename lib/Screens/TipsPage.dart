@@ -2,6 +2,7 @@ import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.da
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 import 'package:pfe_app/Screens/HomeScreen.dart';
 import 'package:pfe_app/Screens/PlantIDpage.dart';
 import 'package:pfe_app/Screens/TipArticlePage.dart';
@@ -27,8 +28,11 @@ class _TipsPageState extends State<TipsPage> {
             child: Row(
               children: [
                 Container(
-                  padding: EdgeInsets.only(top: 20, left: 30),
-                  child: SvgPicture.asset('assets/Svg/Logo.svg'),
+                  height: 120,
+                  width: 100,
+                  padding: EdgeInsets.only(top: 20, left: 20),
+                  child: Lottie.asset('assets/Svg/animation.json',
+                      fit: BoxFit.fill),
                 ),
                 Container(
                   alignment: Alignment.topCenter,

@@ -4,6 +4,7 @@ import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.da
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 
 class PlantIDpage extends StatefulWidget {
   PlantIDpage({Key? key}) : super(key: key);
@@ -25,22 +26,30 @@ class _PlantIDpageState extends State<PlantIDpage> {
           Container(
             child: Row(
               children: [
-                Container(
-                  padding: EdgeInsets.only(top: 32, left: 20),
-                  child: SvgPicture.asset('assets/Svg/Logo.svg'),
-                ),
+                  Expanded(
+                    child: Container(
+                      height: 120,
+                      width: 100,
+                                
+                      
+                      padding: EdgeInsets.only(top: 30, left: 15),
+                      child: Lottie.asset('assets/Svg/animation.json',fit: BoxFit.fill),
+                    ),
+                  ),
                 Container(
                   margin: EdgeInsets.only(left: 20),
                   height: 46,
                   width: 300,
-                  child: Container(
-                    padding: EdgeInsets.only(left: 10),
-                    child: Text(
-                      "PLANT IDENTIFICATION",
-                      style: GoogleFonts.sairaExtraCondensed(
-                        fontSize: 40,
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xff098256),
+                  child: Expanded(
+                    child: Container(
+                      padding: EdgeInsets.only(right: 15),
+                      child: Text(
+                        "PLANT IDENTIFICATION",
+                        style: GoogleFonts.sairaExtraCondensed(
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xff098256),
+                        ),
                       ),
                     ),
                   ),
@@ -71,7 +80,7 @@ class _PlantIDpageState extends State<PlantIDpage> {
                     child: SvgPicture.asset('assets/Svg/Allert-icon.svg')),
                 Center(
                   child: Text(
-                    "Make sure to take your pictures correctly\n(visit the tips page to know more) ",
+                    "Make sure to take your pictures \ncorrectly (visit the tips page to know more) ",
                     style: GoogleFonts.sairaExtraCondensed(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,

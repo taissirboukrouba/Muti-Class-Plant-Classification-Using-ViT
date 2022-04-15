@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 
 class Favourites extends StatefulWidget {
   const Favourites({Key? key}) : super(key: key);
@@ -22,10 +23,14 @@ class _FavouritesState extends State<Favourites> {
           Container(
             child: Row(
               children: [
-                Container(
-                  padding: EdgeInsets.only(top: 20, left: 30),
-                  child: SvgPicture.asset('assets/Svg/Logo.svg'),
-                ),
+                  Container(
+                    height: 120,
+                    width: 100,
+              
+                    
+                    padding: EdgeInsets.only(top: 20, left: 20),
+                    child: Lottie.asset('assets/Svg/animation.json',fit: BoxFit.fill),
+                  ),
                 Container(
                   alignment: Alignment.topCenter,
                   margin: EdgeInsets.only(left: 10, top: 35),

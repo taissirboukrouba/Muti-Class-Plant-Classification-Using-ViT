@@ -26,7 +26,7 @@ class _onBoardingScreenState extends State<onBoardingScreen> {
     return Scaffold(
       backgroundColor: Color(0xff06D980),
       body: PageView(
-        //physics: NeverScrollableScrollPhysics(),
+        physics: NeverScrollableScrollPhysics(),
         controller: controller,
         children: [
           /*----------------------- PAGE 1 -------------------------------*/
@@ -37,7 +37,7 @@ class _onBoardingScreenState extends State<onBoardingScreen> {
                 child: SvgPicture.asset(
                   'assets/Svg/plant-onBoarding .svg',
                   fit: BoxFit.fill,
-                  color: Color(0xff0A7447),
+                  color: Colors.black.withOpacity(0.5),
                 ),
               ),
               Container(
@@ -121,7 +121,7 @@ class _onBoardingScreenState extends State<onBoardingScreen> {
                 child: SvgPicture.asset(
                   'assets/Svg/man-onBoading.svg',
                   fit: BoxFit.fill,
-                  color: Color(0xff0A7447),
+                  color: Colors.black,
                 ),
               ),
               Container(
@@ -222,7 +222,7 @@ class _onBoardingScreenState extends State<onBoardingScreen> {
                   child: SvgPicture.asset(
                     'assets/Svg/onBoarding-Knwoledge.svg',
                     fit: BoxFit.fill,
-                    color: Color(0xff0A7447),
+                    color: Colors.black,
                   )),
               SizedBox(height: MediaQuery.of(context).size.height * 0.01),
               Align(
@@ -319,12 +319,12 @@ class _onBoardingScreenState extends State<onBoardingScreen> {
                 ),
               ),
               Container(
-                  margin: EdgeInsets.only(top: 150),
+                  margin: EdgeInsets.only(top: 100),
                   alignment: Alignment.topCenter,
                   child: SvgPicture.asset(
-                    'assets/Svg/onBoarding-women.svg',
+                    'assets/Svg/onBoarding-picture.svg',
                     fit: BoxFit.fill,
-                    color: Color(0xff0A7447),
+                    color: Colors.black,
                   )),
               Align(
                 alignment: Alignment.centerLeft,
@@ -409,7 +409,7 @@ class _onBoardingScreenState extends State<onBoardingScreen> {
                   child: SvgPicture.asset(
                     'assets/Svg/onBoarding-happy.svg',
                     fit: BoxFit.fill,
-                    color: Color(0xff0A7447),
+                    color: Colors.black,
                   )),
               Container(
                 margin: EdgeInsets.only(top: 700),
