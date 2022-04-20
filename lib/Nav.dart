@@ -4,6 +4,7 @@ import 'package:pfe_app/Screens/Favourites.dart';
 import 'package:pfe_app/Screens/HomeScreen.dart';
 import 'package:pfe_app/Screens/PlantIDpage.dart';
 import 'package:pfe_app/Screens/TipsPage.dart';
+import 'package:pfe_app/Screens/UserProfile.dart';
 
 class Nav extends StatefulWidget {
   const Nav({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class Nav extends StatefulWidget {
 
 class _NavState extends State<Nav> {
   int sindex = 0; //selected index
-  final screens = [HomeScreen(), Favourites(), PlantIDpage(), TipsPage()];
+  final screens = [HomeScreen(), PlantIDpage(), TipsPage(),UserProfile()];
   void itemTapped(int index) {
     setState(() {
       sindex = index;
@@ -45,9 +46,9 @@ class _NavState extends State<Nav> {
             FloatingNavbarItem(
               icon: Icons.home,
             ),
-            FloatingNavbarItem(icon: Icons.favorite),
             FloatingNavbarItem(icon: Icons.camera_alt),
             FloatingNavbarItem(icon: Icons.help),
+            FloatingNavbarItem(icon: Icons.person),
           ],
           currentIndex: sindex,
           onTap: itemTapped,

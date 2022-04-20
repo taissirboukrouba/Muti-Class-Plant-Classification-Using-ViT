@@ -1,9 +1,10 @@
-import 'dart:ffi';
+import 'dart:io';
 
 import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:lottie/lottie.dart';
 
 class PlantIDpage extends StatefulWidget {
@@ -14,6 +15,15 @@ class PlantIDpage extends StatefulWidget {
 }
 
 class _PlantIDpageState extends State<PlantIDpage> {
+  File? my_image;
+  final imagePicker = ImagePicker();
+  Future GetImage() async {
+    final image = await imagePicker.getImage(source: ImageSource.camera);
+    setState(() {
+      my_image = File(image!.path);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,16 +36,17 @@ class _PlantIDpageState extends State<PlantIDpage> {
           Container(
             child: Row(
               children: [
-                  Expanded(
-                    child: Container(
-                      height: 120,
-                      width: 100,
-                                
-                      
-                      padding: EdgeInsets.only(top: 30, left: 15),
-                      child: Lottie.asset('assets/Svg/animation.json',fit: BoxFit.fill),
+                Expanded(
+                  child: Container(
+                    height: 120,
+                    width: 100,
+                    padding: EdgeInsets.only(top: 30, left: 15),
+                    child: Lottie.asset(
+                      'assets/Svg/animation.json',
+                      fit: BoxFit.fill,
                     ),
                   ),
+                ),
                 Container(
                   margin: EdgeInsets.only(left: 20),
                   height: 46,
@@ -60,35 +71,42 @@ class _PlantIDpageState extends State<PlantIDpage> {
           Container(
             margin: EdgeInsets.only(top: 50),
             alignment: Alignment.center,
-            child: SvgPicture.asset('assets/Svg/Take-Picture-icon.svg'),
+            child: InkWell(
+                onTap: GetImage,
+                child: SvgPicture.asset('assets/Svg/Take-Picture-icon.svg')),
           ),
           SizedBox(
-            height: 60,
+            height: 30,
           ),
           Container(
+              child: Icon(
+            Icons.report,
+            color: Color(0xffCE4545),
+            size: 40,
+          )),
+          Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5),
-              color: Color(0xffFAFAFA),
-            ),
-            alignment: Alignment.center,
-            width: 350,
-            height: 80,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Container(
-                    child: SvgPicture.asset('assets/Svg/Allert-icon.svg')),
-                Center(
-                  child: Text(
-                    "Make sure to take your pictures \ncorrectly (visit the tips page to know more) ",
-                    style: GoogleFonts.sairaExtraCondensed(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black),
-                    textAlign: TextAlign.left,
-                  ),
+                color: Color(0xffCE4545),
+                borderRadius: BorderRadius.circular(10)),
+            padding: EdgeInsets.all(7.5),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                color: Color(0xffFAFAFA),
+              ),
+              alignment: Alignment.center,
+              width: 350,
+              height: 120,
+              child: Center(
+                child: Text(
+                  "MAKE SURE TO TAKE YOUR PICTURES CORRECTLY \n(VISIT THE TIPS PAGE TO KNOW MORE) ",
+                  style: GoogleFonts.sairaExtraCondensed(
+                      fontSize: 23,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
+                  textAlign: TextAlign.center,
                 ),
-              ],
+              ),
             ),
           ),
           SizedBox(

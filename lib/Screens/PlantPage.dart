@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
+import 'package:pfe_app/Nav.dart';
 import 'package:pfe_app/Screens/HomeScreen.dart';
 
 class PlantPage extends StatefulWidget {
@@ -15,10 +17,13 @@ class _PlantPageState extends State<PlantPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Color(0xffEEEEEE),
-        body:  Column(
+        body: Column(
           children: [
             Row(
               children: [
+                SizedBox(
+                  height: 100,
+                ),
                 Container(
                   margin: EdgeInsets.only(left: 20, top: 10),
                   child: Text(
@@ -41,7 +46,8 @@ class _PlantPageState extends State<PlantPage> {
                               transitionsBuilder:
                                   (context, animation, animationTime, child) {
                                 animation = CurvedAnimation(
-                                    parent: animation, curve: Curves.elasticInOut);
+                                    parent: animation,
+                                    curve: Curves.elasticInOut);
                                 return ScaleTransition(
                                   scale: animation,
                                   child: child,
@@ -49,25 +55,16 @@ class _PlantPageState extends State<PlantPage> {
                                 );
                               },
                               pageBuilder: (context, animation, animationTime) {
-                                return HomeScreen();
+                                return Nav();
                               }));
                     },
-                    child: Row(
-                      children: [
-                        const Icon(
-                          Icons.arrow_back_ios,
-                          color: Color(0xff098256),
-                          size: 30,
-                        ),
-                        Text(
-                          'Go Back',
-                          style: GoogleFonts.sairaExtraCondensed(
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xff098256),
-                          ),
-                        ),
-                      ],
+                    child: Container(
+                      margin: EdgeInsets.only(left: 60),
+                      child: Lottie.network(
+                        'https://assets8.lottiefiles.com/packages/lf20_m05uufpg.json',
+                        height: 48,
+                        width: 48,
+                      ),
                     ),
                   ),
                 ),
