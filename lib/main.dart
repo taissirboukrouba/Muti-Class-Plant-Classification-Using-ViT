@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
       home: AnimatedSplashScreen(
-        nextScreen: const Nav(),
+        nextScreen: const InscriptionScreen(),
         splash: Container(child: Lottie.asset('assets/Svg/animation.json')),
         splashIconSize: 150,
         splashTransition: SplashTransition.fadeTransition,

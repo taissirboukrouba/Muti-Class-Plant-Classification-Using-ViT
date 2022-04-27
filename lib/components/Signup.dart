@@ -1,4 +1,3 @@
-
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
@@ -22,6 +21,7 @@ class _SingUpState extends State<SingUp> {
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: _formkey,
       child: Column(
         children: [
           SizedBox(
@@ -196,49 +196,49 @@ class _SingUpState extends State<SingUp> {
           SizedBox(
             height: 20,
           ),
-          InkWell(
-            onTap: () {
-              if (_formkey.currentState!.validate()) {
-                    final result = FirebaseAuth.instance
-                        .createUserWithEmailAndPassword(
-                            email: emailController.text,
-                            password: passwordController.text);
-                    if (result != null) {
-                      print(result);
-                    } else
-                      print('a problem occured');
-                  }
-            },
-            child: Container(
-                margin: EdgeInsets.only(left: 20),
+
+          Container(
+            margin: EdgeInsets.only(left: 20),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Color(0xff0D553E),
+            ),
+            height: 50,
+            width: 150,
+            child: Padding(
+              padding: const EdgeInsets.all(5.5),
+              child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Color(0xff0D553E),
+                  borderRadius: BorderRadius.circular(5),
+                  color: Color(0xff098256),
                 ),
-                height: 50,
-                width: 150,
-                child: Padding(
-                  padding: const EdgeInsets.all(5.5),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: Color(0xff098256),
-                    ),
-                    child: Center(
-                      child: Text(
-                        ' Done',
-                        style: GoogleFonts.sairaExtraCondensed(
-                          fontSize: 23,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
+                child: Center(
+                  child: InkWell(
+                    onTap: () {
+                      if (_formkey.currentState!.validate()) {
+                        final result = FirebaseAuth.instance
+                            .createUserWithEmailAndPassword(
+                                email: emailController.text,
+                                password: passwordController.text);
+                        if (result != null) {
+                          print(result);
+                        } else
+                          print('a problem occured');
+                      }
+                    },
+                    child: Text(
+                      ' Done',
+                      style: GoogleFonts.sairaExtraCondensed(
+                        fontSize: 23,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
                       ),
                     ),
                   ),
                 ),
               ),
+            ),
           ),
-          
         ],
       ),
     );
