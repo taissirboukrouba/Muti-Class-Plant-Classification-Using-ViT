@@ -41,6 +41,7 @@ dependencies:
   path_provider: ^2.0.9
   firebase_auth: ^3.3.14
   image_picker: ^0.8.5
+  hidden_drawer_menu: ^3.0.1
   
 
 
@@ -56,12 +57,14 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
   assets:
-     - assets/
-     - assets/fonts/
-     - assets/svg/
-     - assets/images/
+    - assets/
+    - assets/fonts/
+    - assets/svg/
+    - assets/images/
+    - assets/images/Flowers/
+    - assets/images/Indoor/
+    - assets/images/Outdoor/
 
 
 fonts:

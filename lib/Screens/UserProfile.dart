@@ -198,59 +198,6 @@ class UserProfile extends StatelessWidget {
                         ),
                       ),
                     ),
-
-                    /*  Container(
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xff0D553E),
-                      ),
-                      height: 58,
-                      width: 345,
-                      child: Padding(
-                        padding: const EdgeInsets.all(7.5),
-                        child: Container(
-                          color: Color(0xff098256),
-                          child: Stack(
-                            children: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      PageRouteBuilder(
-                                          transitionDuration:
-                                              Duration(milliseconds: 100),
-                                          transitionsBuilder: (context,
-                                              animation, animationTime, child) {
-                                            animation = CurvedAnimation(
-                                                parent: animation,
-                                                curve: Curves.bounceIn);
-                                            return ScaleTransition(
-                                              scale: animation,
-                                              child: child,
-                                              alignment: Alignment.center,
-                                            );
-                                          },
-                                          pageBuilder: (context, animation,
-                                              animationTime) {
-                                            return Favourites();
-                                          }));
-                                },
-                                child: Center(
-                                  child: Text(
-                                    "Favourite Plants",
-                                    style: GoogleFonts.sairaExtraCondensed(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black),
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),*/
                     SizedBox(
                       height: 30,
                     ),

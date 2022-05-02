@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:lottie/lottie.dart';
 import 'package:pfe_app/Nav.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:pfe_app/Screens/Favourites.dart';
 import 'package:pfe_app/Screens/HomeScreen.dart';
 import 'package:pfe_app/Screens/InscriptionScreen.dart';
 import 'package:pfe_app/Screens/PlantPage.dart';
@@ -11,6 +12,7 @@ import 'package:pfe_app/Screens/TipArticlePage.dart';
 import 'package:pfe_app/Screens/UserProfile.dart';
 import 'package:pfe_app/Screens/onBoardingScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:pfe_app/models/Plants.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,14 +32,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home: AnimatedSplashScreen(
+      home: PlantPage(plantType: "Indoor")/*AnimatedSplashScreen(
         nextScreen: const InscriptionScreen(),
         splash: Container(child: Lottie.asset('assets/Svg/animation.json')),
         splashIconSize: 150,
         splashTransition: SplashTransition.fadeTransition,
         backgroundColor: const Color(0xffF8F8F8),
         duration: 3000,
-      ),
+      ),*/
     );
   }
 }

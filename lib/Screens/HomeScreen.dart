@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:pfe_app/components/PlantsList.dart';
+import 'package:pfe_app/components/otherPlantsList.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -81,30 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                       ),
-                    ), /*Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                            padding: EdgeInsets.only(left: 20),
-                            child: SvgPicture.asset(
-                              'assets/Svg/Search.svg',
-                              width: 30,
-                              fit: BoxFit.fill,
-                            )),
-                        Container(
-                          padding: EdgeInsets.only(right: 75),
-                          child: Text(
-                            'Search plants',
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.saira(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w700,
-                              color: Color(0xffC4C4C4),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),*/
+                    ),
                   ),
                 ],
               ),
@@ -152,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         Tab(
                           child: Text(
-                            ' POPULAR',
+                            ' Indoor',
                             style: GoogleFonts.sairaExtraCondensed(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
@@ -161,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         Tab(
                           child: Text(
-                            ' FLOWERS',
+                            ' Outdoor',
                             style: GoogleFonts.sairaExtraCondensed(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
@@ -171,7 +149,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         Tab(
                           child: Text(
-                            ' INDOOR',
+                            ' Flowers',
                             style: GoogleFonts.sairaExtraCondensed(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
@@ -184,10 +162,10 @@ class _HomeScreenState extends State<HomeScreen> {
             Container(
               margin: EdgeInsets.only(top: 250),
               child: TabBarView(children: [
-                PlantsList(),
-                PlantsList(),
-                PlantsList(),
-                PlantsList(),
+                PlantsList(plantType: "All",index: 0,),
+                otherPlantsList(plantType: "Indoor",),
+                otherPlantsList(plantType: "Outdoor",),
+                otherPlantsList(plantType: "Flowers",),
               ]),
             )
           ],

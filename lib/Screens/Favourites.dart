@@ -3,6 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 
+import '../Nav.dart';
+
 class Favourites extends StatefulWidget {
   const Favourites({Key? key}) : super(key: key);
 
@@ -22,22 +24,22 @@ class _FavouritesState extends State<Favourites> {
           ),
           Container(
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                  Container(
-                    height: 120,
-                    width: 100,
-              
-                    
-                    padding: EdgeInsets.only(top: 20, left: 20),
-                    child: Lottie.asset('assets/Svg/animation.json',fit: BoxFit.fill),
-                  ),
+                Container(
+                  height: 120,
+                  width: 100,
+                  padding: EdgeInsets.only(top: 20, left: 20),
+                  child: Lottie.asset('assets/Svg/animation.json',
+                      fit: BoxFit.fill),
+                ),
                 Container(
                   alignment: Alignment.topCenter,
                   margin: EdgeInsets.only(left: 10, top: 35),
                   height: 100,
                   width: 274,
                   child: Container(
-                    padding: EdgeInsets.only(right: 40,bottom: 5),
+                    padding: EdgeInsets.only(right: 40, bottom: 5),
                     child: Text(
                       "FAVORITES",
                       style: GoogleFonts.sairaExtraCondensed(
@@ -67,7 +69,9 @@ class _FavouritesState extends State<Favourites> {
               textAlign: TextAlign.left,
             ),
           ),
-          SizedBox(height: 20,),
+          SizedBox(
+            height: 20,
+          ),
           Expanded(
             child: GridView.count(
               padding: EdgeInsets.symmetric(horizontal: 20),
@@ -85,7 +89,11 @@ class _FavouritesState extends State<Favourites> {
                   child: Stack(
                     children: [
                       Container(
-                        child: Icon(Icons.favorite,color: Color(0xffCE4545),size: 40,),
+                        child: Icon(
+                          Icons.favorite,
+                          color: Color(0xffCE4545),
+                          size: 40,
+                        ),
                         alignment: Alignment.topRight,
                       ),
                       Container(
@@ -116,7 +124,11 @@ class _FavouritesState extends State<Favourites> {
                   child: Stack(
                     children: [
                       Container(
-                        child: Icon(Icons.favorite,color: Color(0xffCE4545),size: 40,),
+                        child: Icon(
+                          Icons.favorite,
+                          color: Color(0xffCE4545),
+                          size: 40,
+                        ),
                         alignment: Alignment.topRight,
                       ),
                       Container(
@@ -147,7 +159,11 @@ class _FavouritesState extends State<Favourites> {
                   child: Stack(
                     children: [
                       Container(
-                        child: Icon(Icons.favorite,color: Color(0xffCE4545),size: 40,),
+                        child: Icon(
+                          Icons.favorite,
+                          color: Color(0xffCE4545),
+                          size: 40,
+                        ),
                         alignment: Alignment.topRight,
                       ),
                       Container(
@@ -178,7 +194,11 @@ class _FavouritesState extends State<Favourites> {
                   child: Stack(
                     children: [
                       Container(
-                        child: Icon(Icons.favorite,color: Color(0xffCE4545),size: 40,),
+                        child: Icon(
+                          Icons.favorite,
+                          color: Color(0xffCE4545),
+                          size: 40,
+                        ),
                         alignment: Alignment.topRight,
                       ),
                       Container(
@@ -209,7 +229,11 @@ class _FavouritesState extends State<Favourites> {
                   child: Stack(
                     children: [
                       Container(
-                        child: Icon(Icons.favorite,color: Color(0xffCE4545),size: 40,),
+                        child: Icon(
+                          Icons.favorite,
+                          color: Color(0xffCE4545),
+                          size: 40,
+                        ),
                         alignment: Alignment.topRight,
                       ),
                       Container(
@@ -240,7 +264,11 @@ class _FavouritesState extends State<Favourites> {
                   child: Stack(
                     children: [
                       Container(
-                        child: Icon(Icons.favorite,color: Color(0xffCE4545),size: 40,),
+                        child: Icon(
+                          Icons.favorite,
+                          color: Color(0xffCE4545),
+                          size: 40,
+                        ),
                         alignment: Alignment.topRight,
                       ),
                       Container(
@@ -271,7 +299,11 @@ class _FavouritesState extends State<Favourites> {
                   child: Stack(
                     children: [
                       Container(
-                        child: Icon(Icons.favorite,color: Color(0xffCE4545),size: 40,),
+                        child: Icon(
+                          Icons.favorite,
+                          color: Color(0xffCE4545),
+                          size: 40,
+                        ),
                         alignment: Alignment.topRight,
                       ),
                       Container(
@@ -302,7 +334,11 @@ class _FavouritesState extends State<Favourites> {
                   child: Stack(
                     children: [
                       Container(
-                        child: Icon(Icons.favorite,color: Color(0xffCE4545),size: 40,),
+                        child: Icon(
+                          Icons.favorite,
+                          color: Color(0xffCE4545),
+                          size: 40,
+                        ),
                         alignment: Alignment.topRight,
                       ),
                       Container(
