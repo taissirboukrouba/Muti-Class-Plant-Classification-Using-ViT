@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pfe_app/Screens/OtherPlantsPage.dart';
 
 import '../models/Plants.dart';
 
@@ -43,37 +44,57 @@ class _otherPlantsListState extends State<otherPlantsList> {
         }
 
         return Column(children: [
-          InkWell(
-            onTap: (){},
-            child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 20),
-              height: 240,
-              child: Row(
-                children: [
-                  Expanded(
-                      child: Stack(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(top: 40),
-                        decoration: BoxDecoration(
-                            color: Color(0xff098256),
-                            borderRadius: BorderRadius.circular(5)),
-                      ),
-                      Container(
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 20),
+            height: 240,
+            child: Row(
+              children: [
+                Expanded(
+                    child: Stack(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(top: 40),
+                      decoration: BoxDecoration(
+                          color: Color(0xff098256),
+                          borderRadius: BorderRadius.circular(5)),
+                    ),
+                    Container(
+                      height: 400,
+                      margin: EdgeInsets.only(bottom: 40),
+                      child: Align(
+                          child: Image.asset(
+                        myFunction2().toString(),
+                        scale: 0.5,
+                        fit: BoxFit.fitHeight,
                         height: 400,
-                        margin: EdgeInsets.only(bottom: 40),
-                        child: Align(
-                            child: Image.asset(
-                          myFunction2().toString(),
-                          scale: 0.5,
-                          fit: BoxFit.fitHeight,
-                          height: 400,
-                        )),
-                      )
-                    ],
-                  )),
-                  Expanded(
-                      child: Container(
+                      )),
+                    )
+                  ],
+                )),
+                Expanded(
+                    child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        PageRouteBuilder(
+                            transitionDuration: Duration(milliseconds: 100),
+                            transitionsBuilder:
+                                (context, animation, animationTime, child) {
+                              animation = CurvedAnimation(
+                                  parent: animation, curve: Curves.bounceIn);
+                              return ScaleTransition(
+                                scale: animation,
+                                child: child,
+                                alignment: Alignment.center,
+                              );
+                            },
+                            pageBuilder: (context, animation, animationTime) {
+                              return OtherPlantsPage(
+                                index: index, plantType: widget.plantType,
+                              );
+                            }));
+                  },
+                  child: Container(
                     height: 200,
                     margin: EdgeInsets.only(top: 60, bottom: 20),
                     decoration: BoxDecoration(
@@ -115,9 +136,9 @@ class _otherPlantsListState extends State<otherPlantsList> {
                             )),
                       ],
                     ),
-                  )),
-                ],
-              ),
+                  ),
+                )),
+              ],
             ),
           ),
         ]);

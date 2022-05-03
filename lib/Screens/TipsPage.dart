@@ -6,6 +6,7 @@ import 'package:lottie/lottie.dart';
 import 'package:pfe_app/Screens/HomeScreen.dart';
 import 'package:pfe_app/Screens/PlantIDpage.dart';
 import 'package:pfe_app/Screens/TipArticlePage.dart';
+import 'package:pfe_app/models/Articles.dart';
 
 class TipsPage extends StatefulWidget {
   const TipsPage({Key? key}) : super(key: key);
@@ -87,14 +88,13 @@ class _TipsPageState extends State<TipsPage> {
           SizedBox(
             height: 10,
           ),
-          Expanded(
-            child: Container(
-              margin: EdgeInsets.all(0),
-              alignment: Alignment.center,
-              child: ListView(
-                padding: EdgeInsets.symmetric(horizontal: 25),
-                children: [
+          Flexible(
+            child: ListView.builder(
+              itemCount: articles.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Column(children: [
                   Container(
+                    margin: EdgeInsets.symmetric(horizontal: 22),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
                       color: Color(0xffD64A4A),
@@ -135,155 +135,35 @@ class _TipsPageState extends State<TipsPage> {
                                           },
                                           pageBuilder: (context, animation,
                                               animationTime) {
-                                            return TipArticlePage();
+                                            return TipArticlePage(
+                                              index: index,
+                                            );
                                           }));
                                 },
                                 child: Container(
-                                  padding: EdgeInsets.only(right: 10),
-                                  child: Text(
-                                    "How to take pictures\n in Nebta ?",
-                                    style: GoogleFonts.sairaExtraCondensed(
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black),
-                                    textAlign: TextAlign.left,
+                                  height: 108,
+                                  width: 170,
+                                  child: Flexible(
+                                    child: Text(
+                                      articles[index].ArticleTitle,
+                                      style: GoogleFonts.sairaExtraCondensed(
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black),
+                                      textAlign: TextAlign.left,
+                                    ),
                                   ),
                                 ),
                               ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: Color(0xffD64A4A),
-                    ),
-                    height: 150,
-                    width: 350,
-                    child: Padding(
-                      padding: const EdgeInsets.all(7.5),
-                      child: Container(
-                        color: Color(0xffF8F8F8),
-                        child: Stack(
-                          children: [
-                            Positioned(
-                              right: 210,
-                              child: SvgPicture.asset(
-                                  'assets/Svg/red-plant-slice.svg'),
                             ),
-                            Positioned(
-                              right: 10,
-                              top: 15,
-                              child: Container(
-                                padding: EdgeInsets.only(right: 10),
-                                child: Text(
-                                  "How to take pictures\n in Nebta ?",
-                                  style: GoogleFonts.sairaExtraCondensed(
-                                      fontSize: 30,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black),
-                                  textAlign: TextAlign.left,
-                                ),
-                              ),
-                            )
                           ],
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: Color(0xffD64A4A),
-                    ),
-                    height: 150,
-                    width: 350,
-                    child: Padding(
-                      padding: const EdgeInsets.all(7.5),
-                      child: Container(
-                        color: Color(0xffF8F8F8),
-                        child: Stack(
-                          children: [
-                            Positioned(
-                              right: 210,
-                              child: SvgPicture.asset(
-                                  'assets/Svg/red-plant-slice.svg'),
-                            ),
-                            Positioned(
-                              right: 10,
-                              top: 15,
-                              child: Container(
-                                padding: EdgeInsets.only(right: 10),
-                                child: Text(
-                                  "How to take pictures\n in Nebta ?",
-                                  style: GoogleFonts.sairaExtraCondensed(
-                                      fontSize: 30,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black),
-                                  textAlign: TextAlign.left,
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: Color(0xffD64A4A),
-                    ),
-                    height: 150,
-                    width: 350,
-                    child: Padding(
-                      padding: const EdgeInsets.all(7.5),
-                      child: Container(
-                        color: Color(0xffF8F8F8),
-                        child: Stack(
-                          children: [
-                            Positioned(
-                              right: 210,
-                              child: SvgPicture.asset(
-                                  'assets/Svg/red-plant-slice.svg'),
-                            ),
-                            Positioned(
-                              right: 10,
-                              top: 15,
-                              child: Container(
-                                padding: EdgeInsets.only(right: 10),
-                                child: Text(
-                                  "How to take pictures\n in Nebta ?",
-                                  style: GoogleFonts.sairaExtraCondensed(
-                                      fontSize: 30,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black),
-                                  textAlign: TextAlign.left,
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                ],
-              ),
+                  SizedBox(height: 15,)
+                ]);
+              },
             ),
           ),
         ],

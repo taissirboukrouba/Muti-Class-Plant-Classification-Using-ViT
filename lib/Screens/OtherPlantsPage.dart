@@ -1,21 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
-import 'package:pfe_app/Nav.dart';
-import 'package:pfe_app/Screens/HomeScreen.dart';
-import 'package:pfe_app/models/Plants.dart';
 
-class PlantPage extends StatefulWidget {
+import '../Nav.dart';
+import '../models/Plants.dart';
+
+class OtherPlantsPage extends StatefulWidget {
+  final String plantType;
+
   final int index;
 
-  const PlantPage({Key? key, required this.index}) : super(key: key);
+  const OtherPlantsPage(
+      {Key? key, required this.plantType, required int this.index})
+      : super(key: key);
 
   @override
-  State<PlantPage> createState() => _PlantPageState();
+  State<OtherPlantsPage> createState() => _OtherPlantsPageState();
 }
 
-class _PlantPageState extends State<PlantPage> {
+class _OtherPlantsPageState extends State<OtherPlantsPage> {
+  myFunction() {
+    if (widget.plantType == 'Indoor') {
+      return Indoor[widget.index];
+    }
+    if (widget.plantType == 'Flowers') {
+      return Flowers[widget.index];
+    }
+    if (widget.plantType == 'Outdoor') {
+      return Outdoor[widget.index];
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +46,7 @@ class _PlantPageState extends State<PlantPage> {
                 Container(
                   margin: EdgeInsets.only(top: 10),
                   child: Text(
-                    plants[widget.index].plantName,
+                    myFunction().plantName,
                     style: GoogleFonts.sairaExtraCondensed(
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
@@ -46,7 +61,7 @@ class _PlantPageState extends State<PlantPage> {
                       Navigator.push(
                           context,
                           PageRouteBuilder(
-                              transitionDuration: Duration(milliseconds: 500),
+                              transitionDuration: Duration(milliseconds: 100),
                               transitionsBuilder:
                                   (context, animation, animationTime, child) {
                                 animation = CurvedAnimation(
@@ -78,7 +93,7 @@ class _PlantPageState extends State<PlantPage> {
               alignment: Alignment.centerLeft,
               margin: EdgeInsets.only(left: 35),
               child: Text(
-                plants[widget.index].ScientificName,
+                myFunction().ScientificName,
                 style: GoogleFonts.sairaExtraCondensed(
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
@@ -97,7 +112,7 @@ class _PlantPageState extends State<PlantPage> {
                     padding: const EdgeInsets.all(7.5),
                     child: Container(
                       child: Image.asset(
-                        plants[widget.index].externalImage,
+                        myFunction().externalImage,
                         fit: BoxFit.fill,
                       ),
                     ))),
@@ -111,7 +126,7 @@ class _PlantPageState extends State<PlantPage> {
                         child: Align(
                           alignment: Alignment.center,
                           child: Text(
-                            plants[widget.index].Description,
+                            myFunction().Description,
                             style: GoogleFonts.sairaExtraCondensed(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -162,7 +177,7 @@ class _PlantPageState extends State<PlantPage> {
                                       ),
                                       Center(
                                         child: Text(
-                                          plants[widget.index].temp,
+                                          myFunction().temp,
                                           style:
                                               GoogleFonts.sairaExtraCondensed(
                                             fontSize: 40,
@@ -213,7 +228,7 @@ class _PlantPageState extends State<PlantPage> {
                                       ),
                                       Center(
                                         child: Text(
-                                          plants[widget.index].light,
+                                          myFunction().light,
                                           style:
                                               GoogleFonts.sairaExtraCondensed(
                                             fontSize: 30,
@@ -264,7 +279,7 @@ class _PlantPageState extends State<PlantPage> {
                                       ),
                                       Center(
                                         child: Text(
-                                          plants[widget.index].water,
+                                          myFunction().water,
                                           style:
                                               GoogleFonts.sairaExtraCondensed(
                                             fontSize: 30,

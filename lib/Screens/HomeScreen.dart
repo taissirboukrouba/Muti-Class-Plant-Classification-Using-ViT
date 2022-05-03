@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     width: 274,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
-                      color: Color(0xffFAFAFA),
+                      color: Color(0xffEEEEEE),
                     ),
                     child: Container(
                       margin: EdgeInsets.only(left: 10),
@@ -162,7 +162,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Container(
               margin: EdgeInsets.only(top: 250),
               child: TabBarView(children: [
-                PlantsList(plantType: "All",index: 0,),
+                PlantsList(plantType: "All",),
                 otherPlantsList(plantType: "Indoor",),
                 otherPlantsList(plantType: "Outdoor",),
                 otherPlantsList(plantType: "Flowers",),

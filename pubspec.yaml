@@ -62,9 +62,15 @@ flutter:
     - assets/fonts/
     - assets/svg/
     - assets/images/
+    - assets/images/BiggerPictures/
     - assets/images/Flowers/
     - assets/images/Indoor/
     - assets/images/Outdoor/
+    - assets/images/BiggerPictures/Flowers/
+    - assets/images/BiggerPictures/Indoor/
+    - assets/images/BiggerPictures/Outdoor/
+
+    
 
 
 fonts:

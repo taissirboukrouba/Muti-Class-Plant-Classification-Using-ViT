@@ -75,13 +75,6 @@ class _InscriptionScreenState extends State<InscriptionScreen> {
                   Login(),
                 ]),
               ),
-              /*Container(
-                margin: EdgeInsets.only(top: 500),
-                child: SvgPicture.asset(
-                  'assets/Svg/plantSignup.svg',
-                  fit: BoxFit.fill,
-                ),
-              ),*/
             ],
           )),
     );

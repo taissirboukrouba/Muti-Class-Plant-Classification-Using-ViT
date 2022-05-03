@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home: PlantPage(plantType: "Indoor")/*AnimatedSplashScreen(
+      home: Nav()/*AnimatedSplashScreen(
         nextScreen: const InscriptionScreen(),
         splash: Container(child: Lottie.asset('assets/Svg/animation.json')),
         splashIconSize: 150,
