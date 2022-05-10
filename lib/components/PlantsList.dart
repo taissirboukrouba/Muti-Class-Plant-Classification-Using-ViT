@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pfe_app/Screens/OppsPage.dart';
 import 'package:pfe_app/models/Plants.dart';
 
 import '../Screens/PlantPage.dart';
@@ -31,29 +32,6 @@ class _PlantsListState extends State<PlantsList> {
                 child: Row(
                   children: [
                     Expanded(
-                        child: Stack(
-                      children: [
-                        Container(
-                          height: 200,
-                          margin: EdgeInsets.only(top: 40),
-                          decoration: BoxDecoration(
-                              color: Color(0xff098256),
-                              borderRadius: BorderRadius.circular(5)),
-                        ),
-                        Container(
-                          height: 400,
-                          margin: EdgeInsets.only(bottom: 40),
-                          child: Align(
-                              child: Image.asset(
-                            plants[index].plantImage,
-                            scale: 0.5,
-                            fit: BoxFit.fitHeight,
-                            height: 400,
-                          )),
-                        )
-                      ],
-                    )),
-                    Expanded(
                         child: InkWell(
                       onTap: () {
                         Navigator.push(
@@ -78,6 +56,30 @@ class _PlantsListState extends State<PlantsList> {
                                   );
                                 }));
                       },
+                      child: Stack(
+                        children: [
+                          Container(
+                            height: 200,
+                            margin: EdgeInsets.only(top: 40),
+                            decoration: BoxDecoration(
+                                color: Color(0xff098256),
+                                borderRadius: BorderRadius.circular(5)),
+                          ),
+                          Container(
+                            height: 400,
+                            margin: EdgeInsets.only(bottom: 40),
+                            child: Align(
+                                child: Image.asset(
+                              plants[index].plantImage,
+                              scale: 0.5,
+                              fit: BoxFit.fitHeight,
+                              height: 400,
+                            )),
+                          )
+                        ],
+                      ),
+                    )),
+                    Expanded(
                       child: Container(
                         height: 200,
                         margin: EdgeInsets.only(top: 60, bottom: 20),
@@ -92,9 +94,35 @@ class _PlantsListState extends State<PlantsList> {
                             Positioned(
                                 top: 10,
                                 left: 150,
-                                child: Icon(
-                                  Icons.favorite_border,
-                                  color: Color(0xff098256),
+                                child: InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        PageRouteBuilder(
+                                            transitionDuration:
+                                                Duration(milliseconds: 200),
+                                            transitionsBuilder: (context,
+                                                animation,
+                                                animationTime,
+                                                child) {
+                                              animation = CurvedAnimation(
+                                                  parent: animation,
+                                                  curve: Curves.elasticInOut);
+                                              return ScaleTransition(
+                                                scale: animation,
+                                                child: child,
+                                                alignment: Alignment.center,
+                                              );
+                                            },
+                                            pageBuilder: (context, animation,
+                                                animationTime) {
+                                              return OppsPage();
+                                            }));
+                                  },
+                                  child: Icon(
+                                    Icons.favorite_border,
+                                    color: Color(0xff098256),
+                                  ),
                                 )),
                             Positioned(
                                 top: 20,
@@ -121,7 +149,7 @@ class _PlantsListState extends State<PlantsList> {
                           ],
                         ),
                       ),
-                    )),
+                    )
                   ],
                 ),
               ),

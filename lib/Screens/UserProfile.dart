@@ -4,13 +4,13 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:pfe_app/Screens/Favourites.dart';
 import 'package:pfe_app/Screens/InscriptionScreen.dart';
+import 'package:pfe_app/Screens/OppsPage.dart';
 
 class UserProfile extends StatelessWidget {
   const UserProfile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var nameController;
     return Scaffold(
       backgroundColor: Color(0xffEEEEEE),
       body: Column(
@@ -77,7 +77,7 @@ class UserProfile extends StatelessWidget {
                 width: 195,
                 height: 100,
                 child: Text(
-                 nameController.text,
+                  "YOUR WHOLE NAME ",
                   style: GoogleFonts.sairaExtraCondensed(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
@@ -182,7 +182,7 @@ class UserProfile extends StatelessWidget {
                                           },
                                           pageBuilder: (context, animation,
                                               animationTime) {
-                                            return Favourites();
+                                            return OppsPage();
                                           }));
                                 },
                                 child: Container(
@@ -209,10 +209,8 @@ class UserProfile extends StatelessWidget {
                         onTap: () async {
                           var result = await FirebaseAuth.instance.signOut();
 
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => InscriptionScreen()));
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => InscriptionScreen()));
                         },
                         child: Container(
                           margin: EdgeInsets.only(left: 20),

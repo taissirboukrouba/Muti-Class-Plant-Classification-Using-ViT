@@ -7,6 +7,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:pfe_app/Screens/Favourites.dart';
 import 'package:pfe_app/Screens/HomeScreen.dart';
 import 'package:pfe_app/Screens/InscriptionScreen.dart';
+import 'package:pfe_app/Screens/OppsPage.dart';
 import 'package:pfe_app/Screens/PlantPage.dart';
 import 'package:pfe_app/Screens/TipArticlePage.dart';
 import 'package:pfe_app/Screens/UserProfile.dart';

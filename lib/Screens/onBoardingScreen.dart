@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pfe_app/Nav.dart';
 import 'package:pfe_app/Screens/HomeScreen.dart';
 
 class onBoardingScreen extends StatefulWidget {
@@ -433,7 +434,7 @@ class _onBoardingScreenState extends State<onBoardingScreen> {
                               );
                             },
                             pageBuilder: (context, animation, animationTime) {
-                              return HomeScreen();
+                              return Nav();
                             }));
                   },
                   child: Center(

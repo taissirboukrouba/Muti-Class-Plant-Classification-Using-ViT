@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:pfe_app/Screens/OppsPage.dart';
 import 'package:pfe_app/components/PlantsList.dart';
 import 'package:pfe_app/components/otherPlantsList.dart';
 
@@ -35,50 +36,73 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Lottie.asset('assets/Svg/animation.json',
                         fit: BoxFit.fill),
                   ),
-                  Container(
-                    margin: EdgeInsets.only(left: 20),
-                    height: 46,
-                    width: 274,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: Color(0xffEEEEEE),
-                    ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          PageRouteBuilder(
+                              transitionDuration: Duration(milliseconds: 200),
+                              transitionsBuilder:
+                                  (context, animation, animationTime, child) {
+                                animation = CurvedAnimation(
+                                    parent: animation,
+                                    curve: Curves.elasticInOut);
+                                return ScaleTransition(
+                                  scale: animation,
+                                  child: child,
+                                  alignment: Alignment.center,
+                                );
+                              },
+                              pageBuilder: (context, animation, animationTime) {
+                                return OppsPage();
+                              }));
+                    },
                     child: Container(
-                      margin: EdgeInsets.only(left: 10),
+                      margin: EdgeInsets.only(left: 20),
+                      height: 46,
+                      width: 274,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xff0D553E),
+                        borderRadius: BorderRadius.circular(5),
+                        color: Color(0xffEEEEEE),
                       ),
-                      height: 70,
-                      width: 320,
-                      child: Padding(
-                        padding: const EdgeInsets.all(3.5),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            color: Color(0xff098256),
-                          ),
-                          child: Row(
-                            children: [
-                              Container(
-                                margin: EdgeInsets.only(left: 5),
-                                child: Icon(
-                                  Icons.search,
-                                  size: 30,
-                                  color: Color(0xff0D553E),
+                      child: Container(
+                        margin: EdgeInsets.only(left: 10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Color(0xff0D553E),
+                        ),
+                        height: 70,
+                        width: 320,
+                        child: Padding(
+                          padding: const EdgeInsets.all(3.5),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              color: Color(0xff098256),
+                            ),
+                            child: Row(
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.only(left: 5),
+                                  child: Icon(
+                                    Icons.search,
+                                    size: 30,
+                                    color: Color(0xff0D553E),
+                                  ),
                                 ),
-                              ),
-                              Container(
-                                  margin: EdgeInsets.only(left: 10,bottom: 7),
-                                  child: Text(
-                                    "SEARCH PLANTS",
-                                    style: GoogleFonts.sairaExtraCondensed(
-                                        fontSize: 25,
-                                        fontWeight: FontWeight.bold,
-                                        color: Color(0xff0D553E)),
-                                    textAlign: TextAlign.center,
-                                  )),
-                            ],
+                                Container(
+                                    margin:
+                                        EdgeInsets.only(left: 10, bottom: 7),
+                                    child: Text(
+                                      "SEARCH PLANTS",
+                                      style: GoogleFonts.sairaExtraCondensed(
+                                          fontSize: 25,
+                                          fontWeight: FontWeight.bold,
+                                          color: Color(0xff0D553E)),
+                                      textAlign: TextAlign.center,
+                                    )),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -162,10 +186,18 @@ class _HomeScreenState extends State<HomeScreen> {
             Container(
               margin: EdgeInsets.only(top: 250),
               child: TabBarView(children: [
-                PlantsList(plantType: "All",),
-                otherPlantsList(plantType: "Indoor",),
-                otherPlantsList(plantType: "Outdoor",),
-                otherPlantsList(plantType: "Flowers",),
+                PlantsList(
+                  plantType: "All",
+                ),
+                otherPlantsList(
+                  plantType: "Indoor",
+                ),
+                otherPlantsList(
+                  plantType: "Outdoor",
+                ),
+                otherPlantsList(
+                  plantType: "Flowers",
+                ),
               ]),
             )
           ],
