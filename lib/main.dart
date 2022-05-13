@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:lottie/lottie.dart';
 import 'package:pfe_app/Nav.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:pfe_app/Screens/DetectionPage.dart';
 import 'package:pfe_app/Screens/Favourites.dart';
 import 'package:pfe_app/Screens/HomeScreen.dart';
 import 'package:pfe_app/Screens/InscriptionScreen.dart';

@@ -1,11 +1,12 @@
 import 'dart:io';
-
 import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:lottie/lottie.dart';
+import 'package:pfe_app/Screens/DetectionPage.dart';
+import 'package:tflite/tflite.dart';
 
 class PlantIDpage extends StatefulWidget {
   PlantIDpage({Key? key}) : super(key: key);
@@ -15,13 +16,108 @@ class PlantIDpage extends StatefulWidget {
 }
 
 class _PlantIDpageState extends State<PlantIDpage> {
-  File? my_image;
-  final imagePicker = ImagePicker();
-  Future GetImage() async {
-    final image = await imagePicker.getImage(source: ImageSource.camera);
+  Future pickImage() async {
+    final ImagePicker _picker = ImagePicker();
+    final XFile? pickedFile = await _picker.pickImage(
+      source: ImageSource.gallery,
+    );
+    File image = File(pickedFile!.path);
+    imageClassification(image);
     setState(() {
-      my_image = File(image!.path);
+      Navigator.push(
+          context,
+          PageRouteBuilder(
+              transitionDuration: Duration(milliseconds: 500),
+              transitionsBuilder: (context, animation, animationTime, child) {
+                animation = CurvedAnimation(
+                    parent: animation, curve: Curves.elasticInOut);
+                return ScaleTransition(
+                  scale: animation,
+                  child: child,
+                  alignment: Alignment.center,
+                );
+              },
+              pageBuilder: (context, animation, animationTime) {
+                return DetectionPage(
+                  ImageSelected: imageSelect,
+                  image: image,
+                  result: MyFun(),
+                );
+              }));
     });
+  }
+
+  Future pickCamera() async {
+    final ImagePicker _picker = ImagePicker();
+    final XFile? pickedFile = await _picker.pickImage(
+      source: ImageSource.camera,
+    );
+    File image = File(pickedFile!.path);
+    imageClassification(image);
+    setState(() {
+      Navigator.push(
+          context,
+          PageRouteBuilder(
+              transitionDuration: Duration(milliseconds: 500),
+              transitionsBuilder: (context, animation, animationTime, child) {
+                animation = CurvedAnimation(
+                    parent: animation, curve: Curves.elasticInOut);
+                return ScaleTransition(
+                  scale: animation,
+                  child: child,
+                  alignment: Alignment.center,
+                );
+              },
+              pageBuilder: (context, animation, animationTime) {
+                return DetectionPage(
+                  ImageSelected: imageSelect,
+                  image: image,
+                  result: MyFun(),
+                );
+              }));
+    });
+  }
+
+  late File _image;
+  late List _results;
+  bool imageSelect = false;
+  @override
+  void initState() {
+    super.initState();
+    loadModel();
+  }
+
+  Future loadModel() async {
+    Tflite.close();
+    String res;
+    res = (await Tflite.loadModel(
+        model: "assets/MyModel.tflite", labels: "assets/MyLabels.txt"))!;
+    print("Models loading status: $res");
+  }
+
+  Future imageClassification(File image) async {
+    final List? recognitions = await Tflite.runModelOnImage(
+      path: image.path,
+      numResults: 1,
+      threshold: 0.05,
+      imageMean: 0.0,
+      imageStd: 255.0,
+    );
+    setState(() {
+      _results = recognitions!;
+      _image = image;
+      imageSelect = true;
+    });
+  }
+
+  MyFun() {
+    String? k;
+    (imageSelect)
+        ? _results.map((result) {
+            k = "${result['label']}";
+          })
+        : k = "null";
+    return k;
   }
 
   @override
@@ -68,15 +164,8 @@ class _PlantIDpageState extends State<PlantIDpage> {
               ],
             ),
           ),
-          Container(
-            margin: EdgeInsets.only(top: 50),
-            alignment: Alignment.center,
-            child: InkWell(
-                onTap: GetImage,
-                child: SvgPicture.asset('assets/Svg/Take-Picture-icon.svg')),
-          ),
           SizedBox(
-            height: 30,
+            height: 20,
           ),
           Container(
               child: Icon(
@@ -110,8 +199,96 @@ class _PlantIDpageState extends State<PlantIDpage> {
             ),
           ),
           SizedBox(
-            height: 70,
+            height: 50,
           ),
+          Container(
+              margin: EdgeInsets.only(left: 10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Color(0xff0D553E),
+              ),
+              height: 100,
+              width: 320,
+              child: Padding(
+                  padding: const EdgeInsets.all(5.5),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: Color(0xff098256),
+                    ),
+                    child: InkWell(
+                      onTap: pickImage,
+                      child: Row(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(left: 5),
+                            child: Icon(
+                              Icons.image,
+                              size: 30,
+                              color: Color(0xff0D553E),
+                            ),
+                          ),
+                          InkWell(
+                            onTap: pickImage,
+                            child: Container(
+                                margin: EdgeInsets.only(left: 90),
+                                child: Text(
+                                  "GALLERY",
+                                  style: GoogleFonts.sairaExtraCondensed(
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.bold,
+                                      color: Color(0xff0D553E)),
+                                  textAlign: TextAlign.center,
+                                )),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ))),
+          SizedBox(
+            height: 20,
+          ),
+          Container(
+              margin: EdgeInsets.only(left: 10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Color(0xff0D553E),
+              ),
+              height: 100,
+              width: 320,
+              child: Padding(
+                  padding: const EdgeInsets.all(5.5),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: Color(0xff098256),
+                    ),
+                    child: InkWell(
+                      onTap: pickCamera,
+                      child: Row(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(left: 5),
+                            child: Icon(
+                              Icons.camera_enhance,
+                              size: 30,
+                              color: Color(0xff0D553E),
+                            ),
+                          ),
+                          Container(
+                              margin: EdgeInsets.only(left: 90),
+                              child: Text(
+                                "CAMERA",
+                                style: GoogleFonts.sairaExtraCondensed(
+                                    fontSize: 25,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color(0xff0D553E)),
+                                textAlign: TextAlign.center,
+                              )),
+                        ],
+                      ),
+                    ),
+                  ))),
         ],
       ),
     );

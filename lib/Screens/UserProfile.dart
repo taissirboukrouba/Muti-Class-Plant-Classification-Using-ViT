@@ -77,7 +77,7 @@ class UserProfile extends StatelessWidget {
                 width: 195,
                 height: 100,
                 child: Text(
-                  "YOUR WHOLE NAME ",
+                  " BOUKROUBA TAYSSIR ",
                   style: GoogleFonts.sairaExtraCondensed(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
