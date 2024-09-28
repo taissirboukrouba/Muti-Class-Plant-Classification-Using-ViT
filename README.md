@@ -14,13 +14,18 @@
 - [Importance](#importance)
 - [Document Control](#document-control)
 - [Installation](#installation)
-- [Computational Environment](#computational-environment)
-- [Methodology](#methodology)
-    - [I - Data Collection](#i---data-collection)
-    - [II - Data Perparation](#ii---data-preparation)
-    - [III - Data Preprocessing](#iii---data-preprocessing)
-    - [IV - Modelling](#iv---modelling)
-- [Results](#results)
+- [VIT Model Implementation](#vit-model-implementation)
+    - [Computational Environment](#computational-environment)
+    - [Methodology](#methodology)
+        - [I - Data Collection](#i---data-collection)
+        - [II - Data Perparation](#ii---data-preparation)
+        - [III - Data Preprocessing](#iii---data-preprocessing)
+        - [IV - Modelling](#iv---modelling)
+    - [Results](#results)
+- [Flutter App Implementation](#flutter-app-implementation)
+  - [Figma App Design](#figma-app-design)
+  - [Heuristics](#heuristics)
+- [Project Limitations](#project-limitations)
 
 
 ---
@@ -33,11 +38,8 @@
 
 ## Installation
 
-
+# VIT Model Implementation
 ## Computational Environment
-
-
-
 ## Methodology 
 
 ### I - Data Collection 
@@ -45,3 +47,11 @@
 ### III - Data Preprocessing
 ### IV - Modelling
 ## Results 
+
+# Flutter App Implementation
+## Figma App Design
+
+## Heuristics 
+
+## Project Limitations 
+
