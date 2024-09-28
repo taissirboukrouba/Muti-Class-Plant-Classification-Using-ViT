@@ -25,6 +25,7 @@
 - [Flutter App Implementation](#flutter-app-implementation)
   - [Figma App Design](#figma-app-design)
   - [Heuristics](#heuristics)
+  - [Model Deployement](#model-deployement)
 - [Project Limitations](#project-limitations)
 
 
@@ -50,8 +51,7 @@
 
 # Flutter App Implementation
 ## Figma App Design
-
 ## Heuristics 
-
+## Model Deployement
 ## Project Limitations 
 
