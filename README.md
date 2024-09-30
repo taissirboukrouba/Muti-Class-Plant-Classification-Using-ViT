@@ -32,7 +32,7 @@
 ---
 
 ## Project Overview
-This project focuses on the creation and testing of a personalized dataset consisting of 42 Algerian plant species. The primary goal is to apply state-of-the-art Vision Transformers (ViT), inspired by the Natural Language Processing (NLP) Transformer architecture, to achieve accurate multi-class image classification of these plants. Unlike traditional convolutional neural networks (CNNs), which rely on localized feature extraction, Vision Transformers offer a more global perspective, potentially enhancing classification accuracy in complex, multi-class datasets. By leveraging VITs and their self-attention mechanisms, this project seeks to explore the model’s ability to handle visual data, particularly in the context of distinguishing between multiple plant species.The trained model was integrated into a Flutter mobile application under the name of **"NEBTA"** , designed in Figma, to provide an easy-to-use interface for plant identification. This app uses the phone's camera, enabling real-time application of the Vision Transformer model to classify plant species directly from live images. 
+This project focuses on the creation and testing of a personalized dataset consisting of 41 Algerian plant species. The primary goal is to apply state-of-the-art Vision Transformers (ViT), inspired by the Natural Language Processing (NLP) Transformer architecture, to achieve accurate multi-class image classification of these plants. Unlike traditional convolutional neural networks (CNNs), which rely on localized feature extraction, Vision Transformers offer a more global perspective, potentially enhancing classification accuracy in complex, multi-class datasets. By leveraging VITs and their self-attention mechanisms, this project seeks to explore the model’s ability to handle visual data, particularly in the context of distinguishing between multiple plant species.The trained model was integrated into a Flutter mobile application under the name of **"NEBTA"** , designed in Figma, to provide an easy-to-use interface for plant identification. This app uses the phone's camera, enabling real-time application of the Vision Transformer model to classify plant species directly from live images. 
 
 
 ## Importance
@@ -60,14 +60,52 @@ pip install -r requirements.txt
 ```
 
 # VIT Model Implementation
-## Computational Environment
 ## Methodology 
-
 ### I - Data Collection 
+The dataset utilized in this approach was gathered through a collaborative effort involving my colleagues and experts from the National Plant Protection Institute, Labiod Medjadja, located in Chlef, Algeria. This collaboration was crucial in ensuring the dataset’s quality and diversity, as it leveraged the expertise of seasoned professionals in the field of plant science. The collection process spanned several months and involved field visits to various locations, including the institute's experimental fields and surrounding farms, to document and capture images of native Algerian plant species.
+
+<br>
+
+<div align="center">
+
+<img src="https://github.com/user-attachments/assets/2b0d4dc3-0cfd-44b2-a71c-67774e8eef3b" width="200"/>
+<img src="https://github.com/user-attachments/assets/2b69127b-0d19-4243-8e43-ba6059259939" width="267"/>
+<img src="https://github.com/user-attachments/assets/fc622f36-0ee6-4c17-8b6a-2977792b2b9a" width="200"/>
+
+</div>
+
+<br>
+
+The resulting dataset comprised approximately 5,146 high-resolution images, representing 41 distinct species of Algerian plants. These plants were meticulously identified and categorized by the experts, ensuring accurate labeling and classification for the machine learning model. The following table summarizes the dataset : 
+
+<div align="center">
+    
+| **Attribute**                              | **Details**                                                       |
+|--------------------------------------------|-------------------------------------------------------------------|
+| **Size**                           | 604.1 MB                                                          |
+| **Number of classes**                      | 41 different plant classes                                         |
+| **Total number of instances**              | 5146 pictures                                                     |
+| **Average number of images per class**     | About 100 pictures                                                     |
+| **Dataset source**                         | The National Plant Protection Institute - Labiod Medjadja |
+| **Examples**                         | Asphodel - Pot Marigold - Baby Sun Rose - Rapeseed   |
+
+
+</div>
+
+
 ### II - Data Preparation
+
+
+#### Bacthing Data 
+#### Data Augmentation
+#### Hyperparameter Tuning 
+### Inside VIT's Architecture 
+
+
 ### III - Data Preprocessing
 ### IV - Modelling
 ## Results 
+
 
 # Flutter App Implementation
 ## Figma App Design
