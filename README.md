@@ -52,9 +52,9 @@ To save time executing the project, it is highly advisable to have access to goo
 
 ```bash
 # clonning repository
-git clone https://github.com/taissirboukrouba/
+git clone https://github.com/taissirboukrouba/Muti-Class-Plant-Classification-Using-ViT.git
 # changing to the project's directory 
-cd 
+cd Muti-Class-Plant-Classification-Using-ViT
 # installing the required libraries
 pip install -r requirements.txt
 ```
