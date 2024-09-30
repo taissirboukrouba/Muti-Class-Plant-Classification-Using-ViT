@@ -32,7 +32,7 @@
 ---
 
 ## Project Overview
-This project focuses on the creation and testing of a personalized dataset consisting of 42 Algerian plant species. The primary goal is to apply state-of-the-art Vision Transformers (ViT), inspired by the Natural Language Processing (NLP) Transformer architecture, to achieve accurate multi-class image classification of these plants. Unlike traditional convolutional neural networks (CNNs), which rely on localized feature extraction, Vision Transformers offer a more global perspective, potentially enhancing classification accuracy in complex, multi-class datasets. By leveraging VITs and their self-attention mechanisms, this project seeks to explore the model’s ability to handle visual data, particularly in the context of distinguishing between multiple plant species.The trained model was integrated into a Flutter mobile application under the name of "NEBTA" , designed in Figma, to provide an easy-to-use interface for plant identification. This app uses the phone's camera, enabling real-time application of the Vision Transformer model to classify plant species directly from live images. 
+This project focuses on the creation and testing of a personalized dataset consisting of 42 Algerian plant species. The primary goal is to apply state-of-the-art Vision Transformers (ViT), inspired by the Natural Language Processing (NLP) Transformer architecture, to achieve accurate multi-class image classification of these plants. Unlike traditional convolutional neural networks (CNNs), which rely on localized feature extraction, Vision Transformers offer a more global perspective, potentially enhancing classification accuracy in complex, multi-class datasets. By leveraging VITs and their self-attention mechanisms, this project seeks to explore the model’s ability to handle visual data, particularly in the context of distinguishing between multiple plant species.The trained model was integrated into a Flutter mobile application under the name of **"NEBTA"** , designed in Figma, to provide an easy-to-use interface for plant identification. This app uses the phone's camera, enabling real-time application of the Vision Transformer model to classify plant species directly from live images. 
 
 
 ## Importance
@@ -47,6 +47,17 @@ The multi-class classification of Algerian plants using Vision Transformers offe
 ## Document Control
 
 ## Installation
+
+To save time executing the project, it is highly advisable to have access to good CPU and GPU resources. Using a computer equipped with high-performance GPUs, or opting for platforms like Colab Pro with premium GPU options such as A100, L4, or T4, can significantly speed up training and inference times. These powerful computing resources are essential for efficiently handling the different techniques and complex computations required by Vision Transformers, ensuring faster and more accurate results
+
+```bash
+# clonning repository
+git clone https://github.com/taissirboukrouba/
+# changing to the project's directory 
+cd 
+# installing the required libraries
+pip install -r requirements.txt
+```
 
 # VIT Model Implementation
 ## Computational Environment
