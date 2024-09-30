@@ -194,9 +194,19 @@ As shown in the sequence diagram, the user first selects an image through the ap
 After the model is loaded, the image is processed and classified into one of these plant categories. The classification results are then returned and sent back through the app's interface, where they are displayed to the user. The user is able to view the identified plant species along with additional information, ensuring a smooth and responsive interaction. This entire process, from image selection to displaying the results, is designed to be efficient, ensuring quick identification while maintaining user-friendly navigation.
 
 
----
-
-
-
 ## Project Limitations 
+
+This project encounters several limitations that affect its overall performance and effectiveness in classificaiton : 
+
+1. **Small Dataset:** The primary limitation is the relatively small size of the dataset, comprising only 5,146 images across 41 distinct classes. This limited number of images can hinder the model's ability to generalize effectively, leading to potential overfitting and reduced accuracy, especially for less-represented classes.
+
+2. **High Number of Classes:** With 41 classes in total, the model must distinguish between many different plant species, some of which share similar characteristics. The abundance of classes relative to the number of available images per class poses a significant challenge, making it difficult for the model to learn unique features for each species.
+
+3. **Complex Model Architecture:** The Vision Transformer (ViT) architecture employed in this project is inherently complex and resource-intensive. While it offers advanced capabilities for image classification, the model's complexity can require extensive computational resources and may not perform optimally with limited training data.
+
+4. **Similar Features Among Classes:** Several plants in the dataset belong to the same family, which means they exhibit very similar physical characteristics. This similarity can lead to confusion during classification, as the model may struggle to differentiate between closely related species with overlapping visual features.
+
+5. **Computational Power Requirements:** The project is computationally heavy, particularly concerning the GPU resources needed for training the model. The ViT architecture demands significant processing power, making it essential to have access to high-performance GPUs to facilitate efficient training and inference. Without adequate computational resources, the training process can be prolonged and may not yield the best results.
+
+These limitations highlight the challenges faced in this project and underscore the need for larger, more diverse datasets, as well as more robust computational resources to improve model performance.
 
