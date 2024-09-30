@@ -48,7 +48,7 @@ The multi-class classification of Algerian plants using Vision Transformers offe
 
 ## Installation
 
-To save time executing the project, it is highly advisable to have access to good CPU and GPU resources. Using a computer equipped with high-performance GPUs, or opting for platforms like Colab Pro with premium GPU options such as A100, L4, or T4, can significantly speed up training and inference times. These powerful computing resources are essential for efficiently handling the different techniques and complex computations required by Vision Transformers, ensuring faster and more accurate results
+To save time executing the project, it is highly advisable to have access to good CPU and GPU resources. Using a computer equipped with high-performance GPUs, or opting for platforms like Colab Pro with premium GPU options such as NVIDIA A100, L4, or T4, can significantly speed up training and inference times. These powerful computing resources are essential for efficiently handling the different techniques and complex computations required by Vision Transformers, ensuring faster and more accurate results
 
 ```bash
 # clonning repository
