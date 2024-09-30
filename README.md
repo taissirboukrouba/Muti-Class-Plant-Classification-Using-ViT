@@ -104,9 +104,9 @@ After collecting the dataset of plant images, we now move to a crucial phase in 
 2. [Hyperparameter Tuning](documentation/hyperparameter%20tuning.md)
 3. [Data Augmentation](documentation/data%20augmentation.md)
 4. [Inside ViT's Architecture]()
+5. [Model Deployment]()
 
 
-### IV - Modelling
 ## Results 
 > [!NOTE]  
 > The following image illustrates results from **only 60 epochs, not the complete 85 epochs**, which would reflect the true final results.
@@ -180,15 +180,19 @@ I was able to integrate several well-established heuristics into the design, inc
 - **Consistency:** The design remained uniform across the entire application, with actions following a clear, logical order, ensuring that users could easily navigate and understand the app's functionality without confusion. This consistency helps create a seamless user experience.
 - **Recognition rather than recall:** By prioritizing images and icons over text-heavy elements, the design allows users to recognize features and actions more easily rather than relying on memory. This approach reduces cognitive load and makes navigation more intuitive.
 - **Aesthetic and minimalist design:** The interfaces were kept simple and uncluttered, presenting only the most essential information. This minimalist approach enables users to focus solely on key elements, enhancing usability and reducing distractions for a cleaner, more focused experience.
-## Model Deployement
+  
+
+
+## App Workflow  
+
+As shown in the sequence diagram, the user first selects an image through the app's user interface, either by capturing a new photo or uploading one from their gallery. Once the image is selected, the app loads the pre-trained model, which is stored in a `.tflite` format (which is flutter-friendly) , directly into the app. This model has been specifically trained to classify images into one of 41 distinct plant classes.
 
 <div align="center">
 <img src="https://github.com/user-attachments/assets/0c88bbcc-1558-484d-a999-642e6aba42d5" width="500"/>
 </div>
 
-As shown in the sequence diagram, the user first selects an image through the app's user interface, either by capturing a new photo or uploading one from their gallery. Once the image is selected, the app loads the pre-trained model, which is stored in an .h5 format, directly into the app. This model has been specifically trained to classify images into one of 41 distinct plant classes.
-
 After the model is loaded, the image is processed and classified into one of these plant categories. The classification results are then returned and sent back through the app's interface, where they are displayed to the user. The user is able to view the identified plant species along with additional information, ensuring a smooth and responsive interaction. This entire process, from image selection to displaying the results, is designed to be efficient, ensuring quick identification while maintaining user-friendly navigation.
+
 
 ---
 
