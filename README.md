@@ -100,7 +100,7 @@ The resulting dataset comprised approximately 5,146 high-resolution images, repr
 ### II - Data Preparation & Modelling
 After collecting the dataset of plant images, we now move to a crucial phase in the data processing pipeline: importing, preprocessing, and preparing the data for classification using Vision Transformers (ViT). This phase is essential for structuring the data and ensuring that the model can effectively learn from it. To achieve accurate plant classification, the pipeline is broken down into multiple steps, each designed to handle different aspects of data processing and modeling. These steps are as follows : 
 
-1. [Importing & Batching Data]()
+1. [Importing & Batching Data](documentation/batching%20data.md)
 2. [Data Augmentation]()
 3. [Hyperparameter Tuning]()
 4. [Inside ViT's Architecture]()
