@@ -108,11 +108,27 @@ After collecting the dataset of plant images, we now move to a crucial phase in 
 
 ### IV - Modelling
 ## Results 
+> [!NOTE]  
+> The following image illustrates results from **only 60 epochs, not the complete 85 epochs**, which would reflect the true final results.
+
+The model's performance over the course of training reveals a significant improvement in accuracy and a notable reduction in loss. In the first epoch, the model recorded an accuracy of only 5.53% with a loss of 4.5985, indicating that it struggled to correctly classify the images. However, by the second epoch, there was a marked improvement, with accuracy rising to 9.14% and loss decreasing to 3.5938. This upward trend continued throughout the training process.
+
+By the final epoch (Epoch 85), the model achieved an impressive accuracy of 91.21% and a loss of 0.2832. This substantial increase in accuracy demonstrates that the model effectively learned to classify the plant species from the dataset, suggesting that the implemented techniques, including data augmentation and the Vision Transformer architecture, were successful. The low final loss value further indicates that the model is not only accurate but also well-calibrated, suggesting it can generalize effectively to unseen data. Overall, these results highlight the effectiveness of the training strategy and the robustness of the model in handling the complexities of the dataset.
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/c6edb940-24ba-4a66-922c-1e02f3841df2" width="500"/>
+</div>
+
+## Predictions 
 
 
 # Flutter App Implementation
 ## Figma App Design
 ## Heuristics 
 ## Model Deployement
+---
+
+
+
 ## Project Limitations 
 
