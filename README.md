@@ -32,6 +32,9 @@
 ---
 
 ## Project Overview
+This project focuses on the creation and testing of a personalized dataset consisting of 42 Algerian plant species. The primary goal is to apply state-of-the-art Vision Transformers (ViT), inspired by the Natural Language Processing (NLP) Transformer architecture, to achieve accurate multi-class image classification of these plants. Unlike traditional convolutional neural networks (CNNs), which rely on localized feature extraction, Vision Transformers offer a more global perspective, potentially enhancing classification accuracy in complex, multi-class datasets. By leveraging VITs and their self-attention mechanisms, this project seeks to explore the model’s ability to handle visual data, particularly in the context of distinguishing between multiple plant species.
+
+
 
 ## Importance
 
