@@ -116,16 +116,58 @@ The model's performance over the course of training reveals a significant improv
 By the final epoch (Epoch 85), the model achieved an impressive accuracy of 91.21% and a loss of 0.2832. This substantial increase in accuracy demonstrates that the model effectively learned to classify the plant species from the dataset, suggesting that the implemented techniques, including data augmentation and the Vision Transformer architecture, were successful. The low final loss value further indicates that the model is not only accurate but also well-calibrated, suggesting it can generalize effectively to unseen data. Overall, these results highlight the effectiveness of the training strategy and the robustness of the model in handling the complexities of the dataset.
 
 <div align="center">
-<img src="https://github.com/user-attachments/assets/c6edb940-24ba-4a66-922c-1e02f3841df2" width="500"/>
+<img src="https://github.com/user-attachments/assets/c6edb940-24ba-4a66-922c-1e02f3841df2" width="400"/>
 </div>
 
 ## Predictions 
+The model’s overall performance was good, achieving acceptable accuracy, but some mispredictions occurred where certain plants were confused for similar-looking species. These misclassifications are likely due to visual similarities between plant species that share common features, such as leaf shapes, textures, or color patterns especially when there is a small dataset. This suggests that while the model effectively learned to distinguish the majority of classes, subtle differences between some plants proved challenging. Such mispredictions are not uncommon in plant classification tasks, where even human experts may struggle to differentiate between visually similar species. Further fine-tuning of the model, additional training data, or the inclusion of more distinguishing features could help improve accuracy and reduce these errors.
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/16b757d6-04a6-4adf-b58b-f7879d510edb" width="500"/>
+</div>
 
 
 # Flutter App Implementation
 ## Figma App Design
+
+For the design of the app, I used Figma and opted for a minimalist, plant-oriented aesthetic to maintain clarity and focus on the app’s functionality. The design consists of over 14 thoughtfully crafted pages, including a custom 3D logo that aligns with the overall green and red theme used throughout the app interface. The design integrates these colors seamlessly into both the logo and the various UI elements for a cohesive look and feel. 
+<br>
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/493cfcbf-3d4e-484f-bb60-7277b64aa015" width="200"/>
+</div>
+<br>
+
+I created 5 onboarding pages to introduce new users to the app's features and functionality. The home page features a scrollable list of detectable plants displayed in a card format, where users can tap on a plant to reveal additional information. A search bar is also integrated on the home page, allowing users to input the name of a plant and instantly access relevant details.
+<br>
+<div align="center">
+
+<img src="https://github.com/user-attachments/assets/3d1378d3-51aa-41d7-9075-ce5b76e4b15d" width="150"/>
+<img src="https://github.com/user-attachments/assets/512d0778-faa0-4249-ab7b-3a9948779eb8" width="150"/>
+<img src="https://github.com/user-attachments/assets/4f8ccfcb-8a16-4ecd-85ce-d8802a23b346" width="150"/>
+<img src="https://github.com/user-attachments/assets/a4756c58-2474-42a4-b71c-63698ab9467b" width="150"/>
+<img src="https://github.com/user-attachments/assets/424da0a4-4b96-4fb7-b90a-0ae69f206252" width="150"/>
+</div>
+
+<br>
+
+
+
+
+In addition, there is a "Tips" page offering guidance on how to use the app, plant care tips, and other useful information for plant enthusiasts. A user profile page is included, featuring a profile picture option, basic settings, and login/logout functionality to enhance personalization. 
+
+The most crucial part of the app is the plant identification page, which allows users to either take a photo using their camera or upload an image from their gallery for identification. This key feature makes the app highly functional and user-friendly, offering a seamless experience for plant lovers looking to explore and learn about various species.
 ## Heuristics 
 ## Model Deployement
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/0c88bbcc-1558-484d-a999-642e6aba42d5" width="500"/>
+</div>
+
+As shown in the sequence diagram, the user first selects an image through the app's user interface, either by capturing a new photo or uploading one from their gallery. Once the image is selected, the app loads the pre-trained model, which is stored in an .h5 format, directly into the app. This model has been specifically trained to classify images into one of 41 distinct plant classes.
+
+After the model is loaded, the image is processed and classified into one of these plant categories. The classification results are then returned and sent back through the app's interface, where they are displayed to the user. The user is able to view the identified plant species along with additional information, ensuring a smooth and responsive interaction. This entire process, from image selection to displaying the results, is designed to be efficient, ensuring quick identification while maintaining user-friendly navigation.
+
 ---
 
 
