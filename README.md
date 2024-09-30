@@ -61,6 +61,10 @@ pip install -r requirements.txt
 
 # VIT Model Implementation
 ## Methodology 
+> [!IMPORTANT]  
+> For a more in-depth documentation , please refer to the following [directory](documentation/)
+
+
 ### I - Data Collection 
 The dataset utilized in this approach was gathered through a collaborative effort involving my colleagues and experts from the National Plant Protection Institute, Labiod Medjadja, located in Chlef, Algeria. This collaboration was crucial in ensuring the dataset’s quality and diversity, as it leveraged the expertise of seasoned professionals in the field of plant science. The collection process spanned several months and involved field visits to various locations, including the institute's experimental fields and surrounding farms, to document and capture images of native Algerian plant species.
 
@@ -93,16 +97,15 @@ The resulting dataset comprised approximately 5,146 high-resolution images, repr
 </div>
 
 
-### II - Data Preparation
+### II - Data Preparation & Modelling
+After collecting the dataset of plant images, we now move to a crucial phase in the data processing pipeline: importing, preprocessing, and preparing the data for classification using Vision Transformers (ViT). This phase is essential for structuring the data and ensuring that the model can effectively learn from it. To achieve accurate plant classification, the pipeline is broken down into multiple steps, each designed to handle different aspects of data processing and modeling. These steps are as follows : 
+
+1. [Importing & Batching Data]()
+2. [Data Augmentation]()
+3. [Hyperparameter Tuning]()
+4. [Inside ViT's Architecture]()
 
 
-#### Bacthing Data 
-#### Data Augmentation
-#### Hyperparameter Tuning 
-### Inside VIT's Architecture 
-
-
-### III - Data Preprocessing
 ### IV - Modelling
 ## Results 
 
