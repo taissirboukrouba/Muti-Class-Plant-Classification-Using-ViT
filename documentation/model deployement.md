@@ -1,4 +1,4 @@
-# Model Deployepment 
+# Model Deployement 
 
 ## Converting the model 
 To upload the model to the Flutter app, it is essential to convert it into a format that is compatible with Flutter, specifically the TensorFlow Lite (TFLite) format. This conversion is crucial because TFLite is optimized for mobile and embedded devices, enabling efficient model inference with reduced latency and lower memory consumption.
