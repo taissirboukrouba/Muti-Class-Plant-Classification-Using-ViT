@@ -1,4 +1,4 @@
-# Nebta
+# Multi-Class Plant Classification Using Vision Transformers 
 ![project cover](https://github.com/taissirboukrouba/Plant-Classification-Using-Vision-Transformers/assets/89689459/dd62e9bd-b0e4-4abb-ba60-87e925074623)
 
 
