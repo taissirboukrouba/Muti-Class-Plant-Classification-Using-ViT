@@ -153,11 +153,33 @@ I created 5 onboarding pages to introduce new users to the app's features and fu
 
 
 
+In addition, there is a "Tips" page offering guidance on how to use the app, plant care tips, and other useful information for plant enthusiasts. A user profile page is included, featuring a profile picture option, basic settings, and login/logout functionality to enhance personalization. The most crucial part of the app is the plant identification page, which allows users to either take a photo using their camera or upload an image from their gallery for identification. This key feature makes the app highly functional and user-friendly, offering a seamless experience for plant lovers looking to explore and learn about various species.
 
-In addition, there is a "Tips" page offering guidance on how to use the app, plant care tips, and other useful information for plant enthusiasts. A user profile page is included, featuring a profile picture option, basic settings, and login/logout functionality to enhance personalization. 
+<br>
+<div align="center">
 
-The most crucial part of the app is the plant identification page, which allows users to either take a photo using their camera or upload an image from their gallery for identification. This key feature makes the app highly functional and user-friendly, offering a seamless experience for plant lovers looking to explore and learn about various species.
+<img src="https://github.com/user-attachments/assets/b891fab0-aa42-4022-8e68-225df1e9c095" width="152"/>
+<img src="https://github.com/user-attachments/assets/2241fc41-f88c-43ea-a2cd-f7722347741c" width="151"/>
+<img src="https://github.com/user-attachments/assets/5f6bf9d4-6c3c-4b86-8091-16dcf29fbc3f" width="155"/>
+<img src="https://github.com/user-attachments/assets/16c52d64-5dc4-4a96-9ab8-53b1f1bb71db" width="155"/>
+<img src="https://github.com/user-attachments/assets/e90de6ab-3925-49fb-93d2-3efc1b17ad70" width="150"/>
+</div>
+
+<br>
+
+
+
+
+
+
+
 ## Heuristics 
+
+I was able to integrate several well-established heuristics into the design, including:
+
+- **Consistency:** The design remained uniform across the entire application, with actions following a clear, logical order, ensuring that users could easily navigate and understand the app's functionality without confusion. This consistency helps create a seamless user experience.
+- **Recognition rather than recall:** By prioritizing images and icons over text-heavy elements, the design allows users to recognize features and actions more easily rather than relying on memory. This approach reduces cognitive load and makes navigation more intuitive.
+- **Aesthetic and minimalist design:** The interfaces were kept simple and uncluttered, presenting only the most essential information. This minimalist approach enables users to focus solely on key elements, enhancing usability and reducing distractions for a cleaner, more focused experience.
 ## Model Deployement
 
 <div align="center">
