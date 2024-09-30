@@ -104,7 +104,7 @@ After collecting the dataset of plant images, we now move to a crucial phase in 
 2. [Hyperparameter Tuning](documentation/hyperparameter%20tuning.md)
 3. [Data Augmentation](documentation/data%20augmentation.md)
 4. [Inside ViT's Architecture]()
-5. [Model Deployment]()
+5. [Model Deployment](documentation/model%20deployement.md)
 
 
 ## Results 
