@@ -1,0 +1,9 @@
+numpy
+tensorflow==2.15.1
+keras
+matplotlib
+scikit-learn
+opencv-python
+Pillow
+tqdm
+tensorflow-addons
