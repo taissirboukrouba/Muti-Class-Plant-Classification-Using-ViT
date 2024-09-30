@@ -4,24 +4,6 @@ I conducted data augmentation to enhance the dataset by randomly applying variou
 
 The types of modifications applied during data augmentation include rotations, shifts, flips, scaling, and color adjustments, among others. Each of these transformations helps create different variations of the original images, enabling the model to learn from a more extensive range of scenarios and reducing the risk of overfitting. This process not only increases the quantity of training data but also enhances the model's ability to generalize better to new, unseen images. Ultimately, data augmentation plays a vital role in preparing the dataset for training a robust and accurate ViT model for plant classification.
 
-```python
-data_augmentation = keras.Sequential(
-    [
-        layers.Normalization(),
-        layers.Resizing(image_size, image_size),
-        layers.RandomFlip("horizontal"),
-        layers.RandomRotation(factor=0.02),
-        layers.RandomZoom(
-            height_factor=0.2, width_factor=0.2
-        ),
-    ],
-    name="data_augmentation",
-)
-data_augmentation.layers[0].adapt(X_train)
-```
-
-This means instead of providing the model with the same pictures every time, I use this code to implement subtle random adjustments, such as slight rotations, zooming, translations, and more. These modifications are designed to be modest enough that they do not significantly alter the content of the images as perceived by the human eye. However, these transformations effectively change the pixel values, introducing variability that helps the model learn more robust features. By augmenting the data in this way, I can enhance the model's ability to generalize, making it less likely to overfit to specific examples in the training dataset. This approach ensures that the model is exposed to a broader range of visual scenarios, ultimately improving its performance on unseen data.
-
 <div align="center">
     <p><em>Image Example Before Data Augmentation</em></p>
     <img src="https://github.com/user-attachments/assets/7eb02b0a-203a-49e6-90e4-c0df11c6d5d2" width="200" alt="loss">
@@ -40,6 +22,25 @@ This means instead of providing the model with the same pictures every time, I u
 </div>
 
 
+
+This means instead of providing the model with the same pictures every time, I use this code to implement subtle random adjustments, such as slight rotations, zooming, translations, and more. These modifications are designed to be modest enough that they do not significantly alter the content of the images as perceived by the human eye. However, these transformations effectively change the pixel values, introducing variability that helps the model learn more robust features. By augmenting the data in this way, I can enhance the model's ability to generalize, making it less likely to overfit to specific examples in the training dataset. This approach ensures that the model is exposed to a broader range of visual scenarios, ultimately improving its performance on unseen data.
+
+
+```python
+data_augmentation = keras.Sequential(
+    [
+        layers.Normalization(),
+        layers.Resizing(image_size, image_size),
+        layers.RandomFlip("horizontal"),
+        layers.RandomRotation(factor=0.02),
+        layers.RandomZoom(
+            height_factor=0.2, width_factor=0.2
+        ),
+    ],
+    name="data_augmentation",
+)
+data_augmentation.layers[0].adapt(X_train)
+```
 
 
 
