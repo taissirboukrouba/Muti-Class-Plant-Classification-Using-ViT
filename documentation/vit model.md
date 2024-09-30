@@ -1,5 +1,19 @@
 # ViT Model
 
+Vision Transformers (ViT) represent a significant advancement in the field of computer vision, applying concepts from Natural Language Processing (NLP) transformers to the realm of image classification. Traditional convolutional neural networks (CNNs) have dominated image analysis for years; however, the emergence of ViT has demonstrated that transformer architectures can also achieve impressive results when adapted for visual tasks.
+
+<br> 
+
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/4e26bff9-8c12-4263-a526-7134c27a4a2f" width="500" >
+</div>
+
+<br> 
+
+The foundational concept of ViT is rooted in the transformer architecture, which revolutionized NLP by effectively capturing long-range dependencies in sequential data through self-attention mechanisms. In a similar manner, ViT processes images by first dividing them into fixed-size patches, treating each patch as a token. These patches are then linearly embedded into vectors, allowing the model to apply the same attention mechanisms used in NLP.
+
+
+
 
 
 ## Residual Skip Connection 
