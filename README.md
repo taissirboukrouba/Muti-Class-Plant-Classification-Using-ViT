@@ -1,6 +1,6 @@
 # Multi-Class Plant Classification Using ViT 
 
-![342967949-dd62e9bd-b0e4-4abb-ba60-87e925074623 (3)](https://github.com/user-attachments/assets/84897d6a-62ca-4595-a7b5-a23400a66ce2)
+![342967949-dd62e9bd-b0e4-4abb-ba60-87e925074623 (1)](https://github.com/user-attachments/assets/551f0327-284b-497a-9d56-db4232a63c09)
 
 
 
