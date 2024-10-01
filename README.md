@@ -1,12 +1,12 @@
 # Multi-Class Plant Classification Using ViT 
-![project cover](https://github.com/taissirboukrouba/Plant-Classification-Using-Vision-Transformers/assets/89689459/dd62e9bd-b0e4-4abb-ba60-87e925074623)
+
+![342967949-dd62e9bd-b0e4-4abb-ba60-87e925074623 (3)](https://github.com/user-attachments/assets/84897d6a-62ca-4595-a7b5-a23400a66ce2)
+
 
 
 - **Author(s):** Taissir Boukrouba
 - **Affiliation:** University of UHBC   
 - **Date:** 07/2022
-- **Last Updated** : 09/2024
-
 ---
 
 ## Table of Contents
@@ -15,17 +15,15 @@
 - [Document Control](#document-control)
 - [Installation](#installation)
 - [VIT Model Implementation](#vit-model-implementation)
-    - [Computational Environment](#computational-environment)
     - [Methodology](#methodology)
         - [I - Data Collection](#i---data-collection)
-        - [II - Data Perparation](#ii---data-preparation)
-        - [III - Data Preprocessing](#iii---data-preprocessing)
-        - [IV - Modelling](#iv---modelling)
+        - [II - Data Preparation And Modelling](#ii---data-preparation-and-modelling)
     - [Results](#results)
+    - [Predictions](#predictions)
 - [Flutter App Implementation](#flutter-app-implementation)
   - [Figma App Design](#figma-app-design)
   - [Heuristics](#heuristics)
-  - [Model Deployement](#model-deployement)
+  - [App Workflow](#app-workflow)
 - [Project Limitations](#project-limitations)
 
 
@@ -97,7 +95,7 @@ The resulting dataset comprised approximately 5,146 high-resolution images, repr
 </div>
 
 
-### II - Data Preparation & Modelling
+### II - Data Preparation And Modelling
 After collecting the dataset of plant images, we now move to a crucial phase in the data processing pipeline: importing, preprocessing, and preparing the data for classification using Vision Transformers (ViT). This phase is essential for structuring the data and ensuring that the model can effectively learn from it. To achieve accurate plant classification, the pipeline is broken down into multiple steps, each designed to handle different aspects of data processing and modeling. These steps are as follows : 
 
 1. [Importing & Batching Data](documentation/batching%20data.md)
