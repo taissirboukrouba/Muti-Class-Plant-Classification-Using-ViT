@@ -132,7 +132,7 @@ For the design of the app, I used Figma and opted for a minimalist, plant-orient
 <br>
 
 <div align="center">
-<img src="https://github.com/user-attachments/assets/493cfcbf-3d4e-484f-bb60-7277b64aa015" width="200"/>
+<img src="https://github.com/user-attachments/assets/493cfcbf-3d4e-484f-bb60-7277b64aa015" width="100"/>
 </div>
 <br>
 
