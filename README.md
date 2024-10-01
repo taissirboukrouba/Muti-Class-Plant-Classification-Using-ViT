@@ -43,6 +43,10 @@ The multi-class classification of Algerian plants using Vision Transformers offe
 
 
 ## Document Control
+This project follows a well-organized directory structure to streamline development and ensure efficient resource management. The `/app` directory contains the core Flutter application files, including the source code and necessary configurations for the plant classification app. Documentation is housed in the `/documentation` folder, offering comprehensive explanations of the methodology and the steps involved. The `/design` folder stores Figma design files, covering the app's interface, which includes 14 pages and a 3D logo with a green and red color theme. Jupyter notebooks used for tasks such as data exploration, preprocessing, and model training are located in the `/notebooks` folder. Finally, the `requirements.txt` file outlines all the necessary Python libraries and dependencies required for running the machine learning components, ensuring seamless project execution and collaboration.
+
+![document control-Page-2](https://github.com/user-attachments/assets/255b35f3-37e7-4236-976c-965132c8cbbb)
+
 
 ## Installation
 
