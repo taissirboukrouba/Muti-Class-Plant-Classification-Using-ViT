@@ -190,7 +190,7 @@ I was able to integrate several well-established heuristics into the design, inc
 As shown in the sequence diagram, the user first selects an image through the app's user interface, either by capturing a new photo or uploading one from their gallery. Once the image is selected, the app loads the pre-trained model, which is stored in a `.tflite` format (which is flutter-friendly) , directly into the app. This model has been specifically trained to classify images into one of 41 distinct plant classes.
 
 <div align="center">
-<img src="https://github.com/user-attachments/assets/0c88bbcc-1558-484d-a999-642e6aba42d5" width="300"/>
+<img src="https://github.com/user-attachments/assets/0c88bbcc-1558-484d-a999-642e6aba42d5" width="500"/>
 </div>
 
 After the model is loaded, the image is processed and classified into one of these plant categories. The classification results are then returned and sent back through the app's interface, where they are displayed to the user. The user is able to view the identified plant species along with additional information, ensuring a smooth and responsive interaction. This entire process, from image selection to displaying the results, is designed to be efficient, ensuring quick identification while maintaining user-friendly navigation.
